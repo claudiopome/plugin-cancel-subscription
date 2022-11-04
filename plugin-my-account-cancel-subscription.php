@@ -42,16 +42,39 @@ spl_autoload_register( function ( $class_name ) {
     $full_path = plugin_dir_path( __FILE__ ) . $path . DIRECTORY_SEPARATOR . $file;
 
     if ( ! file_exists( $full_path ) ) {
-        echo sprintf( esc_html__( 'Class %1$s not found at %2$s.', 'my-account-cancel-subscription' ), $class_name, $full_path );
+	    echo sprintf( esc_html__( 'Class %1$s not found at %2$s.', 'my-account-cancel-subscription' ), $class_name, $full_path );
 
-        return false;
+	    return false;
     }
 
-    require_once $full_path;
+	require_once $full_path;
 
-    return true;
+	return true;
 } );
 
 
-new My_Account_Cancel_Subscription();
+add_action( 'plugins_loaded',
+	function () {
+
+		$is_woocommerce_installed = class_exists( 'WC_Subscriptions' );
+
+		if ( ! $is_woocommerce_installed ) {
+			add_action( 'admin_notices',
+				function () {
+					?>
+					<div class="notice notice-error is-dismissible">
+						<p><?php esc_html_e( 'This plugin requires WooCommerce to be installed', 'my-account-cancel-subscription' ); ?></p>
+					</div>
+					<?php
+
+				} );
+
+			return;
+
+		}
+		new My_Account_Cancel_Subscription();
+	} );
+
+
+
 
