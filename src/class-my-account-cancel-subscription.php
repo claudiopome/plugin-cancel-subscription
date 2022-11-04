@@ -66,7 +66,7 @@ class My_Account_Cancel_Subscription {
         );
 
         wp_enqueue_style( self::STYLE_HANDLE,
-            get_stylesheet_directory_uri() . '/assets/css/myaccount.css',
+            plugin_dir_path( __FILE__ ) . 'style.css',
             array()
         );
     }
