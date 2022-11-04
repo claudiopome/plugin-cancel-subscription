@@ -55,7 +55,7 @@ class My_Account_Cancel_Subscription {
         }
 
         wp_enqueue_script( self::SCRIPT_HANDLE,
-            get_stylesheet_directory_uri() . '/dist/my-account-cancel-subscription.js',
+            plugin_dirl_url( dirname( __DIR__ ) ) . 'dist/my-account-cancel-subscription.js',
             array( 'wp-polyfill', 'wp-i18n' ),
             '',
             true );
