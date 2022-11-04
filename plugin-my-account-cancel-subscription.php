@@ -63,7 +63,7 @@ add_action( 'plugins_loaded',
 				function () {
 					?>
 					<div class="notice notice-error is-dismissible">
-						<p><?php esc_html_e( 'This plugin requires WooCommerce to be installed', 'my-account-cancel-subscription' ); ?></p>
+						<p><?php esc_html_e( 'This plugin requires WooCommerce Subscriptions to be installed', 'my-account-cancel-subscription' ); ?></p>
 					</div>
 					<?php
 

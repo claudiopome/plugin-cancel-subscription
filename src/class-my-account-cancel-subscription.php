@@ -100,7 +100,7 @@ class My_Account_Cancel_Subscription {
         $another_reason_details = ! empty( $_POST["details"] ) ? filter_input( INPUT_POST, 'details', FILTER_SANITIZE_STRING ) : '';
 
         // Prepare email.
-        $to      = 'claudiopome@gmail.com';
+        $to      = 'test@test.com';
         $subject = sprintf( __( 'Subscription cancellation request for subscription #%d', 'my-account-cancel-subscription' ), $subscription_id );
 
         $message = __( 'We received a cancellation request for subscription #', 'my-account-cancel-subscription' ) . $subscription_id . '<br>' . __( 'Related WordLift key: ', 'my-account-cancel-subscription' ) . $wl_key . '<br>'
