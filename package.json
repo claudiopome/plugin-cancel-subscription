@@ -1,0 +1,19 @@
+{
+  "name": "my-account-cancel-subscription",
+  "version": "1.0.0",
+  "description": "This plugin lets the subscriber send an email through WooCommerce My Account page, to ask for subscription cancellation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/claudiopome/cancel-subscription.git"
+  },
+  "author": "Claudio Salatino",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/claudiopome/cancel-subscription/issues"
+  },
+  "homepage": "https://github.com/claudiopome/cancel-subscription#readme"
+}
