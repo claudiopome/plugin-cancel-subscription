@@ -56,9 +56,9 @@ spl_autoload_register( function ( $class_name ) {
 add_action( 'plugins_loaded',
 	function () {
 
-		$is_woocommerce_installed = class_exists( 'WC_Subscriptions' );
+		$is_wcs_installed = class_exists( 'WC_Subscriptions' );
 
-		if ( ! $is_woocommerce_installed ) {
+		if ( ! $is_wcs_installed ) {
 			add_action( 'admin_notices',
 				function () {
 					?>
